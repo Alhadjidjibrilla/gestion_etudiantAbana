@@ -1,9 +1,9 @@
-# Application de gestion des etudiants
+# Application de gestion des étudiants
 
 ## Description
 
 La description ici ...
 
-## Fonctionnalites
+## Fonctionnalités
 
-- Creation de compte (Prof/Etudiant)
+- Creation de compte (Prof/Étudiant)
