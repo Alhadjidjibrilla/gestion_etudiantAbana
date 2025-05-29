@@ -5,21 +5,18 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-import static com.abana.gestionetudiant.etudiant.GenreSexe.MASCULIN;
-import static jakarta.persistence.EnumType.STRING;
-import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Getter
-@Setter
+@Table(name = "etudiants")
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @ToString
-@Table(name = "etudiants")
+@Getter
+@Setter
+@Builder
 public class Etudiant {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -33,9 +30,9 @@ public class Etudiant {
     @Column(nullable = false, unique = true)
     private String mail;
 
-    @Enumerated(STRING)
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private GenreSexe sexe = MASCULIN;
+    private GenreSexe sexe;
 
     private String telephone;
 
