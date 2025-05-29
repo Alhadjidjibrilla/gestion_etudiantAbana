@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gestion_etudiant
+  datasource:
+    url: jdbc:postgresql://localhost:5432/etudiant_db
+    username: postgres
+    password: postgres
+  jpa:
+    database: POSTGRESQL
