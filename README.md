@@ -11,3 +11,9 @@ La description ici ...
 ## Entitiés-Relations
 
 ![entity-relationship](docs/gestion-etudiant.png)
+
+## Entitiés
+
+- Étudiant
+- Enseignant
+- Matière
