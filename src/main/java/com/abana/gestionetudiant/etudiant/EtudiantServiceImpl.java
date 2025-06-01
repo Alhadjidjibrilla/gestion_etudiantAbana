@@ -1,5 +1,6 @@
 package com.abana.gestionetudiant.etudiant;
 
+import com.abana.gestionetudiant.etudiant.dto.EtudiantReponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -12,12 +13,12 @@ public class EtudiantServiceImpl implements EtudiantService {
     private final EtudiantRepository repository;
 
     @Override
-    public Etudiant getEtudiantById(Long id) {
+    public EtudiantReponse getEtudiantById(Long id) {
         return null;
     }
 
     @Override
-    public Etudiant create(Etudiant newEtudiant) {
+    public EtudiantReponse create(Etudiant newEtudiant) {
         // newEtudiant on enregistre
         // Methode A
         return null;

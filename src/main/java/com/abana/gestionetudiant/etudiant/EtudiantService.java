@@ -1,6 +1,8 @@
 package com.abana.gestionetudiant.etudiant;
 
+import com.abana.gestionetudiant.etudiant.dto.EtudiantReponse;
+
 public interface EtudiantService {
-    Etudiant getEtudiantById(Long id);
-    Etudiant create(Etudiant newEtudiant);
+    EtudiantReponse getEtudiantById(Long id);
+    EtudiantReponse create(Etudiant newEtudiant);
 }
