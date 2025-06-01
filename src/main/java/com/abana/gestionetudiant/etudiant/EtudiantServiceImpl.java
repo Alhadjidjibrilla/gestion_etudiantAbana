@@ -1,11 +1,13 @@
 package com.abana.gestionetudiant.etudiant;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class EtudiantServiceImpl implements EtudiantService{
+@Primary
+public class EtudiantServiceImpl implements EtudiantService {
 
     private final EtudiantRepository repository;
 
@@ -17,6 +19,7 @@ public class EtudiantServiceImpl implements EtudiantService{
     @Override
     public Etudiant create(Etudiant newEtudiant) {
         // newEtudiant on enregistre
+        // Methode A
         return null;
     }
 }
