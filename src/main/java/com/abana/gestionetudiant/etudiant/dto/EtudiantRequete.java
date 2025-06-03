@@ -3,7 +3,6 @@ package com.abana.gestionetudiant.etudiant.dto;
 import com.abana.gestionetudiant.etudiant.GenreSexe;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -19,10 +18,18 @@ public record EtudiantRequete(
                 message = "Votre mail est invalide")
         String mail,
 
+        @NotBlank(message = "Veuillez specifier les sexe de cet étudiant")
         GenreSexe sexe,
+
         String matricule,
+
+        @NotBlank(message = "Veuillez specifier le numero  de telephone de cet étudiant")
         String telephone,
+        
+        @NotBlank(message = "Veuillez specifier la date de maissance de cet étudiant")
         LocalDate date_naissance,
+
+        @NotBlank(message = "Veuillez specifier le lieu de maissance de cet étudiant")
         String lieu_naissance
 ) {
 
