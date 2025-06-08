@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -34,7 +35,7 @@ public class EtudiantServiceImpl implements EtudiantService {
         final var etudiant = Etudiant.builder()
                 .nom(requete.nom())
                 .prenom(requete.prenom())
-                .matricule("")
+                .matricule(UUID.randomUUID().toString())
                 .mail(requete.mail())
                 .sexe(requete.sexe())
                 .telephone(requete.telephone())

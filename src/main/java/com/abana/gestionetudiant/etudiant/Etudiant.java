@@ -24,7 +24,7 @@ public class Etudiant {
 
     private String prenom;
 
-    @Column(nullable = false, length = 8, unique = true)
+    @Column(nullable = false, unique = true)
     private String matricule;
 
     @Column(nullable = false, unique = true)
