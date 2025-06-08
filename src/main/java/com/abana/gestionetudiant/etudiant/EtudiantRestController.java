@@ -19,10 +19,8 @@ public class EtudiantRestController {
 
     @PostMapping
     public ResponseEntity<EtudiantReponse> enregistrerNouveau(final @Valid @RequestBody EtudiantRequete nouveauEtudiant) {
-        return new ResponseEntity<>(
-                this.service.create(nouveauEtudiant),
-                HttpStatus.CREATED
-        );
+        final var reponse = this.service.create(nouveauEtudiant);
+        return new ResponseEntity<>(reponse, HttpStatus.CREATED);
     }
 
     @GetMapping
