@@ -6,6 +6,9 @@ import com.abana.gestionetudiant.etudiant.dto.EtudiantRequete;
 import java.util.List;
 
 public interface EtudiantService {
-    EtudiantReponse create(EtudiantRequete requete);
+    EtudiantReponse creer(EtudiantRequete requete);
+
     List<EtudiantReponse> tousLesEtudiants();
+
+    EtudiantReponse recupererParId(Long id);
 }
