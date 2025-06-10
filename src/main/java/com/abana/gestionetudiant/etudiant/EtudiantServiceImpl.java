@@ -2,6 +2,7 @@ package com.abana.gestionetudiant.etudiant;
 
 import com.abana.gestionetudiant.etudiant.dto.EtudiantReponse;
 import com.abana.gestionetudiant.etudiant.dto.EtudiantRequete;
+import com.abana.gestionetudiant.exceptions.ElementIntrouvableException;
 import com.abana.gestionetudiant.exceptions.MailDejaUtiliserException;
 import com.abana.gestionetudiant.mapper.EntityAndDtoMapper;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class EtudiantServiceImpl implements EtudiantService {
     private final EntityAndDtoMapper mapper;
 
     @Override
-    public EtudiantReponse create(final EtudiantRequete requete) {
+    public EtudiantReponse creer(final EtudiantRequete requete) {
         // 1 - Verifier que le mail n'est pas encore utilisé
         Optional<Etudiant> optionalEtudiant = this.repository.findByMailIgnoreCase(requete.mail().trim());
         // CAS OU L'ETUDIANT EXISTE - ON DECLANCHE UNE EXCEPTION ET FIN D'EXECUTION
@@ -53,7 +54,7 @@ public class EtudiantServiceImpl implements EtudiantService {
 
     @Override
     public List<EtudiantReponse> tousLesEtudiants() {
-        /*
+
         final var etudiants = this.repository.findAll();
 
         final var etudiantReponseList = new ArrayList<EtudiantReponse>();
@@ -64,12 +65,28 @@ public class EtudiantServiceImpl implements EtudiantService {
         }
 
         return etudiantReponseList;
-         */
 
-        return this.repository.findAll().stream()
-                .map(this.mapper::getEtudiantReponse)
-                .toList();
 
+//        return this.repository.findAll().stream()
+//                .map(this.mapper::getEtudiantReponse)
+//                .toList();
+
+    }
+
+    @Override
+    public EtudiantReponse recupererParId(final Long id) {
+
+//        return this.repository.findById(id)
+//                .map(etudiant -> this.mapper.getEtudiantReponse(etudiant))
+//                .orElseThrow(() -> new ElementIntrouvableException("Etudiant introuvable avec l'ID: " + id));
+//
+        final var possibleEtudiant = this.repository.findById(id);
+        if (possibleEtudiant.isEmpty()) {
+            throw new ElementIntrouvableException("Etudiant introuvable avec l'ID: " + id);
+        }
+        final var etudiant = possibleEtudiant.get();
+
+        return this.mapper.getEtudiantReponse(etudiant);
     }
 
 
