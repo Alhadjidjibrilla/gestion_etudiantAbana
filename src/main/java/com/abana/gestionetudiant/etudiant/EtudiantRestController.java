@@ -19,7 +19,7 @@ public class EtudiantRestController {
 
     @PostMapping
     public ResponseEntity<EtudiantReponse> enregistrerNouveau(final @Valid @RequestBody EtudiantRequete nouveauEtudiant) {
-        final var reponse = this.service.create(nouveauEtudiant);
+        final var reponse = this.service.creer(nouveauEtudiant);
         return new ResponseEntity<>(reponse, HttpStatus.CREATED);
     }
 
@@ -28,4 +28,8 @@ public class EtudiantRestController {
         return new ResponseEntity<>(this.service.tousLesEtudiants(), HttpStatus.OK);
     }
 
+    @GetMapping(path = {"/{id}"})
+    public ResponseEntity<EtudiantReponse> etudiantParId(final @PathVariable Long id) {
+        return new ResponseEntity<>(this.service.recupererParId(id), HttpStatus.OK);
+    }
 }
