@@ -14,16 +14,12 @@ import lombok.*;
 @Builder
 public class Matiere {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
     private String titre;
-
-    @Column(nullable = false)
-    private String credit;
 
     @Column(nullable = false)
     private Integer nombreCredit;
