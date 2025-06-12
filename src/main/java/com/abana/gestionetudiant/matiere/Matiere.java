@@ -1,8 +1,13 @@
 package com.abana.gestionetudiant.matiere;
 
 
+import com.abana.gestionetudiant.enseignant.Enseignant;
+import com.abana.gestionetudiant.etudiant.Etudiant;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "matieres")
@@ -27,4 +32,9 @@ public class Matiere {
     @Column(nullable = false)
     private Integer volumeHoraire;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    private Enseignant enseignant;
+
+    @ManyToMany
+    private List<Etudiant> etudiants = new ArrayList<>();
 }

@@ -2,10 +2,14 @@ package com.abana.gestionetudiant.enseignant;
 
 
 import com.abana.gestionetudiant.commun.GenreSexe;
+import com.abana.gestionetudiant.matiere.Matiere;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "enseignants")
@@ -43,5 +47,9 @@ public class Enseignant {
 
     @Column(nullable = false)
     private String specialite;
+
+    @OneToMany
+    @JoinColumn(name = "matiere_id")
+    private List<Matiere> matieres = new ArrayList<>();
 
 }

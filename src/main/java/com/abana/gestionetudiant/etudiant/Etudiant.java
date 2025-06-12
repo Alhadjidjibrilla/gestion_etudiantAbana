@@ -1,10 +1,14 @@
 package com.abana.gestionetudiant.etudiant;
 
+import com.abana.gestionetudiant.carte.Carte;
 import com.abana.gestionetudiant.commun.GenreSexe;
+import com.abana.gestionetudiant.matiere.Matiere;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -44,4 +48,14 @@ public class Etudiant {
     private String lieu_naissance;
 
     // Liste des matières
+
+    @ManyToMany
+    @JoinTable(
+            name = "etudiant_matiere",
+            joinColumns = {@JoinColumn(name = "etudiant_id")},
+            inverseJoinColumns = {@JoinColumn(name = "matiere_id")})
+    private List<Matiere> matieres = new ArrayList<>();
+
+    @OneToOne
+    private Carte carte;
 }
