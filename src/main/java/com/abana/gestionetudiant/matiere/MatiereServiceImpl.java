@@ -16,4 +16,6 @@ public class MatiereServiceImpl implements MatiereService {
     public Matiere create(Matiere newMatiere) {
         return null;
     }
+
+    // TODO: Recuperer la liste des matieres
 }

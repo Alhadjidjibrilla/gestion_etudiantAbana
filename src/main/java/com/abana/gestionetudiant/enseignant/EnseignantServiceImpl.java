@@ -15,4 +15,6 @@ public class EnseignantServiceImpl implements EnseignantService {
     public Enseignant create(Enseignant newEnseignant) {
         return null;
     }
+
+    // TODO: methode pour recuperer tous enseignants
 }
