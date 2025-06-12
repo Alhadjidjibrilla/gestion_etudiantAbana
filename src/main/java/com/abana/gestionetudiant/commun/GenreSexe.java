@@ -1,4 +1,4 @@
-package com.abana.gestionetudiant.etudiant;
+package com.abana.gestionetudiant.commun;
 
 public enum GenreSexe {
     MASCULIN,

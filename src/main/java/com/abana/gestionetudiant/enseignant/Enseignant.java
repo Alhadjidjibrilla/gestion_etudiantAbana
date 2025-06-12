@@ -1,6 +1,7 @@
 package com.abana.gestionetudiant.enseignant;
 
 
+import com.abana.gestionetudiant.commun.GenreSexe;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,7 +17,6 @@ import java.time.LocalDate;
 @Builder
 public class Enseignant {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,7 +31,7 @@ public class Enseignant {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private SexeEnseignant sexe;
+    private GenreSexe sexe;
 
     @Column(nullable = false)
     private LocalDate dateNaissance;

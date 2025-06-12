@@ -1,6 +1,6 @@
 package com.abana.gestionetudiant.etudiant.dto;
 
-import com.abana.gestionetudiant.etudiant.GenreSexe;
+import com.abana.gestionetudiant.commun.GenreSexe;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

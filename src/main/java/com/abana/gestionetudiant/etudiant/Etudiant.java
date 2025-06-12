@@ -1,5 +1,6 @@
 package com.abana.gestionetudiant.etudiant;
 
+import com.abana.gestionetudiant.commun.GenreSexe;
 import jakarta.persistence.*;
 import lombok.*;
 
