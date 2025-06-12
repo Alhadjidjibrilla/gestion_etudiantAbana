@@ -4,6 +4,8 @@ package com.abana.gestionetudiant.enseignant;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "enseignants")
 @NoArgsConstructor
@@ -31,9 +33,15 @@ public class Enseignant {
     @Column(nullable = false)
     private SexeEnseignant sexe;
 
+    @Column(nullable = false)
+    private LocalDate dateNaissance;
+
     private String telephone;
 
     @Column(nullable = false, unique = true)
     private String mail;
+
+    @Column(nullable = false)
+    private String specialite;
 
 }

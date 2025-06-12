@@ -22,6 +22,13 @@ public class Matiere {
     @Column(nullable = false)
     private String titre;
 
+    @Column(nullable = false)
     private String credit;
+
+    @Column(nullable = false)
+    private Integer nombreCredit;
+
+    @Column(nullable = false)
+    private Integer volumeHoraire;
 
 }
